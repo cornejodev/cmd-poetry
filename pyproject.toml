@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cmd-line-app-pyinstaller"
+version = "0.1.0"
+description = ""
+authors = ["edmeister <koed.dev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.13"
+bs4 = "^0.0.2"
+requests = "^2.31.0"
+pyinstaller = "^6.4.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
