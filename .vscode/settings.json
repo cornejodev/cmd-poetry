@@ -1,0 +1,5 @@
+{
+	"yaml.schemas": {
+		"https://json.schemastore.org/github-workflow.json": "file:///Users/bono/Desktop/python/cmd-line-app-pyinstaller/.github/workflow/ci.yml"
+	}
+}
