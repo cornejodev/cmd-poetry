@@ -27,8 +27,15 @@ jobs:
     - name: Install dependencies
       run: poetry install
 
-    - name: Build Executable with PyInstaller
-      run: poetry run pyinstaller --onefile --clean cmd_line_app_pyinstaller/main.py
+    # Add UPX installation step here
+    - name: Install UPX
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y upx
+
+    - name: Build Executable with PyInstaller and UPX
+      run: |
+        poetry run pyinstaller --onefile --clean --upx-dir=/usr/bin cmd_line_app_pyinstaller/main.py
 
     - name: Upload Executable as Artifact
       uses: actions/upload-artifact@v3
