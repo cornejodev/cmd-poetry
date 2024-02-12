@@ -30,20 +30,6 @@ jobs:
     - name: Build Executable with PyInstaller
       run: poetry run pyinstaller --onefile --clean cmd_line_app_pyinstaller/main.py
 
-    # UPX Installation (adjust as necessary for each OS)
-    - name: Install UPX
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y upx
-      if: runner.os == 'Linux' || runner.os == 'macOS'
-    - name: Install UPX (Windows)
-      run: choco install upx
-      if: runner.os == 'Windows'
-
-    # Separate step to compress the executable with UPX
-    - name: Compress Executable with UPX
-      run: upx dist/*
-
     - name: Upload Executable as Artifact
       uses: actions/upload-artifact@v3
       with:
